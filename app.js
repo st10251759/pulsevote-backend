@@ -10,11 +10,12 @@ const app = express();
 // Middleware
 app.use(helmet());
 app.use(cors({
-  origin: "https://localhost:5173", // or "http://localhost:5173" if not using HTTPS locally
+  origin: "https://localhost:5173", // Your frontend URL
   credentials: true
 }));
 app.use(express.json());
- 
+
+
 // Routes
 const authRoutes = require("./routes/authRoutes");
 const { protect } = require("./middleware/authMiddleware");
